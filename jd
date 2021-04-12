@@ -1,0 +1,134 @@
+# 口袋书店
+1 8,12,18 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_bookshop.js, tag=口袋书店,enabled=ture
+
+# 京东汽车
+10 7 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_car.js, tag=京东汽车,enabled=ture
+
+# 京东汽车兑换
+0 0 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_car_exchange.js, tag=京东汽车兑换,enabled=ture
+
+# 签到领现金
+2 0-23/4 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_cash.js, tag=签到领现金,enabled=ture
+
+# 摇京豆
+5 0 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_club_lottery.js, tag=摇京豆,enabled=ture
+
+# crazyJoy任务
+10 7 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_crazy_joy.js, tag=crazyJoy任务,enabled=ture
+
+# 监控crazyJoy分红
+10 12 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_crazy_joy_bonus.js, tag=监控crazyJoy分红,enabled=ture
+
+# 天天提鹅
+10 * * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_daily_egg.js, tag=天天提鹅,enabled=ture
+
+# 京喜工厂
+10 * * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_dreamFactory.js, tag=京喜工厂,enabled=ture
+
+# 东东农场
+5 6-18/6 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_fruit.js, tag=东东农场,enabled=ture
+
+# 获取互助码
+20 13 * * 6 https://jdsharedresourcescdn.azureedge.net/jdresource/jd_get_share_code.js, tag=获取互助码,enabled=ture
+
+# 京东国际盲盒
+0 9,12,20,21 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_global_mh.js, tag=京东国际盲盒,enabled=ture
+
+# 东东工厂
+10 * * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_jdfactory.js, tag=东东工厂,enabled=ture
+
+# 京东赚赚
+10 0 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_jdzz.js, tag=京东赚赚,enabled=ture
+
+# 宠汪汪
+15 0-23/2 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_joy.js, tag=京东宠汪汪,enabled=ture
+
+# 宠汪汪🐕喂食
+15 0-23/1 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_joy_feedPets.js, tag=京东宠汪汪喂食,enabled=ture
+
+# 宠汪汪强制为别人助力
+http-request ^https:\/\/draw\.jdfcloud\.com\/\/common\/pet\/enterRoom\/h5\?invitePin=.*(&inviteSource=task_invite&shareSource=\w+&inviteTimeStamp=\d+&openId=\w+)?&reqSource=weapp|^https:\/\/draw\.jdfcloud\.com(\/mirror)?\/\/pet\/helpFriend\?friendPin https://jdsharedresourcescdn.azureedge.net/jdresource/jd_joy_help.js, requires-body=true, timeout=3600, tag=宠汪汪强制为别人助力,enabled=ture
+
+# 宠汪汪积分兑换奖品
+0 0-16/8 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_joy_reward.js, tag=宠汪汪积分兑换奖品,enabled=ture
+
+# 宠汪汪赛跑
+15 10 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_joy_run.js, tag=宠汪汪邀请助力与赛跑助力,enabled=ture
+
+# 宠汪汪助力更新Token
+http-response ^https:\/\/draw\.jdfcloud\.com(\/mirror)?\/\/api\/user\/addUser\?code= https://jdsharedresourcescdn.azureedge.net/jdresource/jd_joy_run.js, requires-body=true, timeout=10, tag=宠汪汪助力更新Token,enabled=ture
+
+# 宠汪汪助力获取Token
+http-request ^https:\/\/draw\.jdfcloud\.com(\/mirror)?\/\/api\/user\/user\/detail\?openId= https://jdsharedresourcescdn.azureedge.net/jdresource/jd_joy_run.js, timeout=3600, tag=宠汪汪助力获取Token,enabled=ture
+
+# 宠汪汪偷好友积分与狗粮
+10 0-21/3 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_joy_steal.js, tag=宠汪汪偷好友积分与狗粮,enabled=ture
+
+# 京喜农场
+0 9,12,18 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_jxnc.js, tag=京喜农场,enabled=ture
+
+# 京东快递签到
+10 0 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_kd.js, tag=京东快递签到,enabled=ture
+
+# 京东摇钱树
+3 0-23/2 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_moneyTree.js, tag=京东摇钱树,enabled=ture
+
+# 京东秒秒币
+10 7 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_ms.js, tag=京东秒秒币,enabled=ture
+
+# 点点券
+10 0,20 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_necklace.js, tag=点点券,enabled=ture
+
+# 女装盲盒抽京豆
+0 7 19-25 2 * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_nzmh.js, tag=女装盲盒,enabled=ture
+
+# 东东萌宠
+15 6-18/6 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_pet.js, tag=东东萌宠,enabled=ture
+
+# 金融养猪
+12 * * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_pigPet.js, tag=京东金融养猪猪,enabled=ture
+
+# 京东种豆得豆
+1 7-21/2 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_plantBean.js, tag=京东种豆得豆,enabled=ture
+
+# 京东保价
+0 2 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_price.js, tag=京东保价,enabled=ture
+
+# 京东全民开红包
+1 1 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_redPacket.js, tag=京东全民开红包,enabled=ture
+
+# 闪购盲盒
+20 8 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_sgmh.js, tag=闪购盲盒,enabled=ture
+
+# 进店领豆
+10 0 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_shop.js, tag=进店领豆,enabled=ture
+
+# 东东小窝
+16 22 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_small_home.js, tag=东东小窝,enabled=ture
+
+# ✈️天天加速
+8 0-23/3 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_speed.js, tag=京东天天加速,enabled=ture
+
+# 京东极速版红包
+0 0 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_speed_redpocke.js, tag=京东极速版红包,enabled=ture
+
+# 京东极速版
+0 7 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_speed_sign.js, tag=京东极速版,enabled=ture
+
+# 东东超市
+11 * * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_superMarket.js, tag=东东超市,enabled=ture
+
+# 赚京豆
+10 7 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_syj.js, tag=赚京豆,enabled=ture
+
+# 取关京东店铺和商品
+55 23 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_unsubscribe.js, tag=取关京东店铺商品,enabled=ture
+
+# 小鸽有礼2
+30 7 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_xgyl.js, tag=小鸽有礼2,enabled=ture
+
+# 京喜签到
+5 0 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jx_sign.js, tag=京喜签到,enabled=ture
+
+# 京喜财富岛
+30 8,13,19 * * * https://jdsharedresourcescdn.azureedge.net/jdresource/jd_cfd.js, tag=京喜财富岛,enabled=ture
