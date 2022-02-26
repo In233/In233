@@ -264,7 +264,6 @@ proxy-groups:
       - HK
     url: "http://www.gstatic.com/generate_204"
     interval: 300
-    proxies:
 
   - name: 日本节点
     type: url-test
@@ -273,8 +272,6 @@ proxy-groups:
       - JP
     url: "http://www.gstatic.com/generate_204"
     interval: 300
-    proxies:
-      - DIRECT
       
   - name: 韩国节点
     type: url-test
@@ -283,8 +280,6 @@ proxy-groups:
       - KR
     url: "http://www.gstatic.com/generate_204"
     interval: 300
-    proxies:
-      - DIRECT
       
   - name: 台湾节点
     type: url-test
@@ -293,8 +288,6 @@ proxy-groups:
       - TW
     url: "http://www.gstatic.com/generate_204"
     interval: 300
-    proxies:
-      - DIRECT
 
   - name: 美国节点
     type: url-test
@@ -303,8 +296,6 @@ proxy-groups:
       - US
     url: "http://www.gstatic.com/generate_204"
     interval: 300
-    proxies:
-      - DIRECT
 
 rule-providers:
         
