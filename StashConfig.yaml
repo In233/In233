@@ -115,18 +115,20 @@ proxy-groups:
       - All
     proxies:
       - 自动选择
-
-  - name: 自动选择
-    type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
-    proxies:
-      - 手动切换
       - 香港节点
       - 日本节点
       - 韩国节点
       - 美国节点
       - 台湾节点
       - DIRECT
+
+  - name: 自动选择
+    type: url-test
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
+    use: 
+       - All
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
       
   - name: YouTube
     type: select
