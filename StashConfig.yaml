@@ -111,8 +111,6 @@ proxy-groups:
   - name: 手动切换
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Rocket.png
-    use:
-      - All
     proxies:
       - 自动选择
       - 香港节点
