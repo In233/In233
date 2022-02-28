@@ -1,0 +1,285 @@
+mode: rule
+log-level: warning
+external-controller: 127.0.0.1:9090
+dns:
+  default-nameserver:
+  - 223.5.5.5
+  - 119.29.29.29
+  - system
+  nameserver:
+  - https://doh.pub/dns-query
+  - https://dns.alidns.com/dns-query
+  - system
+  fake-ip-filter:
+  - "*.lan"
+  - "*.localdomain"
+  - "*.example"
+  - "*.invalid"
+  - "*.localhost"
+  - "*.test"
+  - "*.local"
+  - "*.home.arpa"
+  - "time.*.com"
+  - "time.*.gov"
+  - "time.*.edu.cn"
+  - "time.*.apple.com"
+  - "time1.*.com"
+  - "time2.*.com"
+  - "time3.*.com"
+  - "time4.*.com"
+  - "time5.*.com"
+  - "time6.*.com"
+  - "time7.*.com"
+  - "ntp.*.com"
+  - "ntp1.*.com"
+  - "ntp2.*.com"
+  - "ntp3.*.com"
+  - "ntp4.*.com"
+  - "ntp5.*.com"
+  - "ntp6.*.com"
+  - "ntp7.*.com"
+  - "*.time.edu.cn"
+  - "*.ntp.org.cn"
+  - "+.pool.ntp.org"
+  - "time1.cloud.tencent.com"
+  - "music.163.com"
+  - "*.music.163.com"
+  - "*.126.net"
+  - "musicapi.taihe.com"
+  - "music.taihe.com"
+  - "songsearch.kugou.com"
+  - "trackercdn.kugou.com"
+  - "*.kuwo.cn"
+  - "api-jooxtt.sanook.com"
+  - "api.joox.com"
+  - "joox.com"
+  - "y.qq.com"
+  - "*.y.qq.com"
+  - "streamoc.music.tc.qq.com"
+  - "mobileoc.music.tc.qq.com"
+  - "isure.stream.qqmusic.qq.com"
+  - "dl.stream.qqmusic.qq.com"
+  - "aqqmusic.tc.qq.com"
+  - "amobile.music.tc.qq.com"
+  - "*.xiami.com"
+  - "*.music.migu.cn"
+  - "music.migu.cn"
+  - "*.msftconnecttest.com"
+  - "*.msftncsi.com"
+  - "msftconnecttest.com"
+  - "msftncsi.com"
+  - "localhost.ptlogin2.qq.com"
+  - "localhost.sec.qq.com"
+  - "+.srv.nintendo.net"
+  - "+.stun.playstation.net"
+  - "xbox.*.microsoft.com"
+  - "xnotify.xboxlive.com"
+  - "+.battlenet.com.cn"
+  - "+.wotgame.cn"
+  - "+.wggames.cn"
+  - "+.wowsgame.cn"
+  - "+.wargaming.net"
+  - "proxy.golang.org"
+  - "stun.*.*"
+  - "stun.*.*.*"
+  - "+.stun.*.*"
+  - "+.stun.*.*.*"
+  - "+.stun.*.*.*.*"
+  - "heartbeat.belkin.com"
+  - "*.linksys.com"
+  - "*.linksyssmartwifi.com"
+  - "*.router.asus.com"
+  - "mesu.apple.com"
+  - "swscan.apple.com"
+  - "swquery.apple.com"
+  - "swdownload.apple.com"
+  - "swcdn.apple.com"
+  - "swdist.apple.com"
+  - "lens.l.google.com"
+  - "stun.l.google.com"
+  - "+.nflxvideo.net"
+  - "*.square-enix.com"
+  - "*.finalfantasyxiv.com"
+  - "*.ffxiv.com"
+proxy-providers:
+  All:
+    type: http
+    url: "https://api.v1.mk/sub?target=clash&url=https://sub.sslinks.co.in/api/v1/client/subscribe?token=4a94c27e37d4525addd8f67aabcdca86&list=true&udp=true"
+    interval: 3600
+    path: ./all.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+  US:
+    type: http
+    url: "https://api.v1.mk/sub?target=clash&url=https://sub.sslinks.co.in/api/v1/client/subscribe?token=4a94c27e37d4525addd8f67aabcdca86&list=true&udp=true&include=(?=.*(美|\U0001F1FA\U0001F1F2|US|(?i)States|American))"
+    interval: 3600
+    path: ./us.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+  HK:
+    type: http
+    url: "https://api.v1.mk/sub?target=clash&url=https://sub.sslinks.co.in/api/v1/client/subscribe?token=4a94c27e37d4525addd8f67aabcdca86&list=true&udp=true&include=(?=.*(港|\U0001F1ED\U0001F1F0|HK|(?i)Hong))"
+    interval: 3600
+    path: ./hk.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+  JP:
+    type: http
+    url: "https://api.v1.mk/sub?target=clash&url=https://sub.sslinks.co.in/api/v1/client/subscribe?token=4a94c27e37d4525addd8f67aabcdca86&list=true&udp=true&include=(?=.*(日|\U0001F1EF\U0001F1F5|东京|JP|(?i)Japan))"
+    interval: 3600
+    path: ./jp.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+  KR:
+    type: http
+    url: "https://api.v1.mk/sub?target=clash&url=https://sub.sslinks.co.in/api/v1/client/subscribe?token=4a94c27e37d4525addd8f67aabcdca86&list=true&udp=true&include=(?=.*(韩|\U0001F1F0\U0001F1F7|首尔|KR|(?i)Korea))"
+    interval: 3600
+    path: ./kr.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+  TW:
+    type: http
+    url: "https://api.v1.mk/sub?target=clash&url=https://sub.sslinks.co.in/api/v1/client/subscribe?token=4a94c27e37d4525addd8f67aabcdca86&list=true&udp=true&include=(?=.*(台|\U0001F1E8\U0001F1F3|\U0001F1F9\U0001F1FC|湾|TW|(?i)Taiwan))"
+    interval: 3600
+    path: ./tw.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+proxies:
+proxy-groups:
+- name: AUTO
+  type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Auto.png
+  proxies:
+  - Proxy
+  - 香港节点
+  - 日本节点
+  - 韩国节点
+  - 美国节点
+  - 台湾节点
+  - DIRECT
+- name: Proxy
+  type: url-test
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Dark/Proxy.png
+  use:
+  - All
+  url: "http://www.gstatic.com/generate_204"
+  interval: 300
+  proxies: []
+- name: Streaming
+  type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Streaming.png
+  proxies:
+  - AUTO
+  - DIRECT
+- name: StreamingSE
+  type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/StreamingSE.png
+  proxies:
+  - DIRECT
+  - AUTO
+- name: 漏网之鱼
+  type: select
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png
+  proxies:
+  - AUTO
+  - DIRECT
+- name: 香港节点
+  type: url-test
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
+  use:
+  - HK
+  url: "http://www.gstatic.com/generate_204"
+  interval: 300
+- name: 日本节点
+  type: url-test
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
+  use:
+  - JP
+  url: "http://www.gstatic.com/generate_204"
+  interval: 300
+- name: 韩国节点
+  type: url-test
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
+  use:
+  - KR
+  url: "http://www.gstatic.com/generate_204"
+  interval: 300
+- name: 台湾节点
+  type: url-test
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
+  use:
+  - TW
+  url: "http://www.gstatic.com/generate_204"
+  interval: 300
+- name: 美国节点
+  type: url-test
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
+  use:
+  - US
+  url: "http://www.gstatic.com/generate_204"
+  interval: 300
+rule-providers:
+  Unbreak:
+    behavior: classical
+    interval: 86400
+    url: https://github.com/DivineEngine/Profiles/raw/master/Clash/RuleSet/Unbreak.yaml
+  Advertising:
+    behavior: classical
+    interval: 86400
+    url: https://github.com/DivineEngine/Profiles/raw/master/Clash/RuleSet/Guard/Advertising.yaml
+  Hijacking:
+    behavior: classical
+    interval: 86400
+    url: https://github.com/DivineEngine/Profiles/raw/master/Clash/RuleSet/Guard/Hijacking.yaml
+  Streaming:
+    behavior: classical
+    interval: 86400
+    url: https://github.com/DivineEngine/Profiles/raw/master/Clash/RuleSet/StreamingMedia/Streaming.yaml
+  StreamingSE:
+    behavior: classical
+    interval: 86400
+    url: https://github.com/DivineEngine/Profiles/raw/master/Clash/RuleSet/StreamingMedia/StreamingSE.yaml
+  Global:
+    behavior: classical
+    interval: 86400
+    url: https://github.com/DivineEngine/Profiles/raw/master/Clash/RuleSet/Global.yaml
+  Apple:
+    behavior: classical
+    interval: 86400
+    url: https://github.com/DivineEngine/Profiles/raw/master/Clash/RuleSet/Extra/Apple/Apple.yaml
+  China:
+    behavior: classical
+    interval: 86400
+    url: https://github.com/DivineEngine/Profiles/raw/master/Clash/RuleSet/China.yaml
+rules:
+- RULE-SET,Unbreak,DIRECT
+- RULE-SET,Advertising,REJECT
+- RULE-SET,Hijacking,REJECT
+- RULE-SET,Streaming,REJECT
+- RULE-SET,StreamingSE,REJECT
+- RULE-SET,Global,REJECT
+- RULE-SET,Apple,DIRECT
+- RULE-SET,China,DIRECT
+- IP-CIDR,192.168.0.0/16,DIRECT
+- IP-CIDR,10.0.0.0/8,DIRECT
+- IP-CIDR,172.16.0.0/12,DIRECT
+- IP-CIDR,127.0.0.0/8,DIRECT
+- IP-CIDR,100.64.0.0/10,DIRECT
+- IP-CIDR,224.0.0.0/4,DIRECT
+- IP-CIDR,fe80::/10,DIRECT
+- IP-CIDR,119.28.28.28/32,DIRECT
+- IP-CIDR,182.254.116.0/24,DIRECT
+- GEOIP,CN,DIRECT
+- MATCH,漏网之鱼
