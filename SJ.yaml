@@ -6,10 +6,6 @@ dns:
   - 223.5.5.5
   - 119.29.29.29
   - system
-  nameserver:
-  - https://doh.pub/dns-query
-  - https://dns.alidns.com/dns-query
-  - system
   fake-ip-filter:
   - "*.lan"
   - "*.localdomain"
@@ -158,20 +154,20 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
 proxies:
 proxy-groups:
-- name: AUTO
+- name: Proxy
   type: select
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Auto.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Dark/Proxy.png
   proxies:
-  - Proxy
+  - Auto
   - 香港节点
   - 日本节点
   - 韩国节点
   - 美国节点
   - 台湾节点
   - DIRECT
-- name: Proxy
+- name: Auto
   type: url-test
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Dark/Proxy.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Dark/Auto.png
   use:
   - All
   url: "http://www.gstatic.com/generate_204"
@@ -179,57 +175,62 @@ proxy-groups:
   proxies: []
 - name: Streaming
   type: select
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Streaming.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Dark/Streaming.png
   proxies:
-  - AUTO
+  - Proxy
   - DIRECT
 - name: StreamingSE
   type: select
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/StreamingSE.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Dark/StreamingSE.png
   proxies:
   - DIRECT
-  - AUTO
-- name: 漏网之鱼
+  - Proxy
+- name: Final
   type: select
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Dark/Final.png
   proxies:
-  - AUTO
+  - Proxy
   - DIRECT
 - name: 香港节点
   type: url-test
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Dark/Hong_Kong.png
   use:
   - HK
   url: "http://www.gstatic.com/generate_204"
   interval: 300
+  proxies: []
 - name: 日本节点
   type: url-test
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Dark/Japan.png
   use:
   - JP
   url: "http://www.gstatic.com/generate_204"
   interval: 300
+  proxies: []
 - name: 韩国节点
   type: url-test
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Dark/Korea.png
   use:
   - KR
   url: "http://www.gstatic.com/generate_204"
   interval: 300
+  proxies: []
 - name: 台湾节点
   type: url-test
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Dark/Taiwan.png
   use:
   - TW
   url: "http://www.gstatic.com/generate_204"
   interval: 300
+  proxies: []
 - name: 美国节点
   type: url-test
-  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
+  icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Dark/United_States.png
   use:
   - US
   url: "http://www.gstatic.com/generate_204"
   interval: 300
+  proxies: []
 rule-providers:
   Unbreak:
     behavior: classical
@@ -267,9 +268,9 @@ rules:
 - RULE-SET,Unbreak,DIRECT
 - RULE-SET,Advertising,REJECT
 - RULE-SET,Hijacking,REJECT
-- RULE-SET,Streaming,REJECT
-- RULE-SET,StreamingSE,REJECT
-- RULE-SET,Global,REJECT
+- RULE-SET,Streaming,Streaming
+- RULE-SET,StreamingSE,StreamingSE
+- RULE-SET,Global,Proxy
 - RULE-SET,Apple,DIRECT
 - RULE-SET,China,DIRECT
 - IP-CIDR,192.168.0.0/16,DIRECT
@@ -282,4 +283,4 @@ rules:
 - IP-CIDR,119.28.28.28/32,DIRECT
 - IP-CIDR,182.254.116.0/24,DIRECT
 - GEOIP,CN,DIRECT
-- MATCH,漏网之鱼
+- MATCH,Final
