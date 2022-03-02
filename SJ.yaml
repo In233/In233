@@ -176,6 +176,7 @@ proxy-providers:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
+
  #新加坡点
   SJ:
     type: http
