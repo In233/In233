@@ -7,7 +7,6 @@ dns:
   enable: true
   listen: 0.0.0.0:53
   default-nameserver:
-  - 119.29.29.29
   - 223.5.5.5
   - system
   enhanced-mode: fake-ip
@@ -104,7 +103,6 @@ dns:
   - "*.finalfantasyxiv.com"
   - "*.ffxiv.com"
   nameserver:
-  - 119.29.29.29
   - 223.5.5.5
   - system
   
