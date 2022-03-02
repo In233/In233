@@ -107,76 +107,91 @@ dns:
   - 119.29.29.29
   - 223.5.5.5
   - system
+  
 proxy-providers:
+  #全部节点
   All:
     type: http
-    url: https://dler.cloud/subscribe/0PZDk3nZbLnuq9Sb96U6?clash=ss
+    url: "https://api.v1.mk/sub?target=clash&url=你的订阅链接&list=true&udp=true"
     interval: 3600
     path: ./all.yaml
     health-check:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
+
+  #美国节点    
   US:
     type: http
     url: https://dler.cloud/subscribe/0PZDk3nZbLnuq9Sb96U6?clash=ss
-    filter: "美|\U0001F1FA\U0001F1F2|US|(?i)States|American"
+    filter: 美|🇺🇲|US|(?i)States|American
     interval: 3600
     path: ./all.yaml
     health-check:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
+
+  #香港节点
   HK:
     type: http
     url: https://dler.cloud/subscribe/0PZDk3nZbLnuq9Sb96U6?clash=ss
-    filter: "港|\U0001F1ED\U0001F1F0|HK|(?i)Hong"
+    filter: 港|🇭🇰|HK|(?i)Hong
     interval: 3600
     path: ./all.yaml
     health-check:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
+
+  #日本节点
   JP:
     type: http
     url: https://dler.cloud/subscribe/0PZDk3nZbLnuq9Sb96U6?clash=ss
-    filter: "日|\U0001F1EF\U0001F1F5|东京|JP|(?i)Japan"
+    filter: 日|🇯🇵|东京|JP|(?i)Japan
     interval: 3600
     path: ./all.yaml
     health-check:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
+
+  #韩国节点
   KR:
     type: http
     url: https://dler.cloud/subscribe/0PZDk3nZbLnuq9Sb96U6?clash=ss
-    filter: "韩|\U0001F1F0\U0001F1F7|首尔|KR|(?i)Korea"
+    filter: 韩|🇰🇷|首尔|KR|(?i)Korea
     interval: 3600
     path: ./all.yaml
     health-check:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
+      
+ #台湾节点
   TW:
     type: http
     url: https://dler.cloud/subscribe/0PZDk3nZbLnuq9Sb96U6?clash=ss
-    filter: "台|\U0001F1E8\U0001F1F3|\U0001F1F9\U0001F1FC|湾|TW|(?i)Taiwan"
+    filter: 台|🇨🇳|🇹🇼|湾|TW|(?i)Taiwan
     interval: 3600
     path: ./all.yaml
     health-check:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
+      
+  #新加坡点     
   SJ:
     type: http
     url: https://dler.cloud/subscribe/0PZDk3nZbLnuq9Sb96U6?clash=ss
-    filter: "新|\U0001F1F8\U0001F1EC|新加坡|SJ|(?i)Singapore"
+    filter: "新|🇸🇬|新加坡|SJ|(?i)Singapore"
     interval: 3600
     path: ./all.yaml
     health-check:
       enable: true
       interval: 600
       url: http://www.gstatic.com/generate_204
+      
 proxies:
 proxy-groups:
 - name: Proxy
@@ -265,6 +280,7 @@ proxy-groups:
   url: "http://www.gstatic.com/generate_204"
   interval: 300
   proxies: []
+  
 rule-providers:
   Unbreak:
     behavior: classical
@@ -298,6 +314,7 @@ rule-providers:
     behavior: classical
     interval: 86400
     url: https://github.com/DivineEngine/Profiles/raw/master/Clash/RuleSet/China.yaml
+    
 rules:
 - RULE-SET,Unbreak,DIRECT
 - RULE-SET,Advertising,REJECT
